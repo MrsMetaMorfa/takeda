@@ -1,0 +1,201 @@
+.header {
+  padding-top: 40px;
+  padding-right: 280px;
+  .container {
+    align-items: center;
+  }
+  .navigation {
+    padding: 0 0 0 15px;
+    margin: 0;
+    list-style-type: none;
+    align-items: baseline;
+    width: 100%;
+    justify-content: space-between;
+    li {
+      padding: 0 15px;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $colorBasicLight;
+        font-size: 12px;
+        position: relative;
+        line-height: 1.4;
+        //min-width: 64px;
+        max-width: 140px;
+        span {
+          white-space: nowrap;
+        }
+        &:after {
+          content: '';
+          display: block;
+          height: 3px;
+          background: $colorBasicLight;
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 0;
+          transition: width 0.2s ease-in-out;
+        }
+        &:hover, &:focus {
+          outline: none;
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .menu_btn {
+    display: none;
+    .page_button {
+      font-size: 0;
+      width: 60px;
+      height: 60px;
+      background-image: url(../assets/images/button-hover.png);
+      cursor: pointer;
+      position: relative;
+      &:hover, &:focus {
+        background-image: url(../assets/images/button.png);
+      }
+      &:before, &:after, span {
+        width: 50%;
+        height: 4px;
+        background: $colorBasicLight;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        margin-top: -2px;
+        transition: all 0.2s ease-in-out;
+      }
+      &:before {
+        content: '';
+        transform-origin: left center;
+        top: 30%;
+      }
+      &:after {
+        content: '';
+        transform-origin: left center;
+        top: 70%;
+      }
+    }
+    &.active {
+      .page_button {
+        span {
+          width: 0;
+          transform-origin: center;
+        }
+        &:before {
+          transform: rotate(45deg);
+          width: 57%;
+          left: 30%;
+        }
+        &:after {
+          transform: rotate(-45deg);
+          width: 57%;
+          left: 30%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .header {
+    padding-right: 0;
+    nav {
+      justify-content: space-between;
+      flex-shrink: 1;
+      flex-grow: 1;
+      width: 100%;
+      padding: 0;
+      .logo {
+        width: 205px;
+        padding-right: 3.125vw;
+      }
+      .navigation {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .header nav {
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    .navigation {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .header {
+    nav {
+      flex-direction: row;
+      padding-left: 30px;
+      .logo {
+        padding-right: 30px;
+      }
+      .navigation {
+        flex-wrap: wrap;
+        width: calc(100% - 235px);
+        padding-bottom: 0;
+        li {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    nav {
+      justify-content:flex-start;
+      position: relative;
+      .navigation {
+        opacity: 0;
+        top: -425px;
+        background: $colorBasicBright;
+        flex-direction: column;
+        position: absolute;
+        left: 315px;
+        z-index: 100;
+        width: auto;
+        border-radius: 5px;
+        border: 1px solid $colorBasicLight;
+        transition: top 0.4s;
+        br {
+          display: none;
+        }
+        li {
+          margin-top: 0;
+          padding: 8px 15px;
+          width: 100%;
+          &:not(:last-of-type) {
+            border-bottom: 1px solid $colorBasicLight;
+          }
+        }
+      }
+      .menu_btn {
+        display: block;
+        &.active + .navigation{
+          opacity: 1;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  .header nav {
+    .navigation {
+      right: 25px;
+      left: unset;
+    }
+    .menu_btn.active + .navigation {
+      top: 75px;
+    }
+  }
+}

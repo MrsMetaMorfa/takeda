@@ -1,0 +1,24 @@
+{
+  "name": "Default",
+  "version": "1.0.0",
+  "description": "Default Boilerplate Sass+Pug",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "beeper": "^1.1.1",
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-util": "^3.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
