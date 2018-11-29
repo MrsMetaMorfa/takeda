@@ -669,6 +669,10 @@ img {
         top: 84px;
         right: -1.5625vw;
         z-index: -1; }
+      .smiles.smiles--main .smile--bottom .ball {
+        display: block; }
+        .smiles.smiles--main .smile--bottom .ball img {
+          position: static; }
       .smiles.smiles--main .smile--bottom .page_button {
         display: block;
         margin: 20px auto 0; }

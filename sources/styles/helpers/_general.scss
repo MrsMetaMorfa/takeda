@@ -210,6 +210,12 @@ img {
         right: -1.5625vw;
         z-index: -1;
       }
+      .ball {
+        display: block;
+        img {
+          position: static;
+        }
+      }
       .page_button {
         display: block;
         margin: 20px auto 0;
