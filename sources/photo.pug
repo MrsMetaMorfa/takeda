@@ -1,0 +1,56 @@
+extends templates/layout/main.pug
+
+include templates/header
+
+block title
+    title Simple Title
+
+    body.middle
+        .page_wrapper
+            +header
+            .page_title
+                h1.title Weeks of warmth
+                p.subtutle Недели теплоты
+
+            .container
+                section.page_content.page_content--photo
+                    .wrapper.container
+                        -var i = 0;
+                        while i < 9
+                            .photo_wrapper
+                                picture
+                                    img(src='assets/images/main-image-12.jpg', alt='')
+                                button.page_button(type='button') Загрузить фотографию
+                            -i++
+
+                aside.smiles.smiles--photo
+                    .speech-bubble
+                        button.page_button(type='button') Закрыть
+                        h2.title делитесь тёплыми фотографиями с коллегами!
+                        ol
+                            li Выберите фотографию, которая вызывает у вас приятные воспоминания.
+                            li Загрузите её в специальную форму в разделе «Тёплые фотографии».
+                            li По желанию добавьте к ней рамку или забавные стикеры и делитесь с коллегами.
+                            li Фотографию также можно сохранить на свой компьютер.
+                        p.small Давайте вместе создадим галерею тёплых воспоминаний, которые смогут согреть нас даже в самые ненастные дни!
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    picture
+                        img(src='assets/images/smile_07.png', alt='')
+
+        .modal_wrapper
+            .modal(id='photoDownloaded')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        p Спасибо!<br>Ваша фотография загружена!
+                    button.page_button(type='button') Назад
+
+
+
+        script(src='scripts/libs/jquery-3.2.1.min.js')
+        script(src='scripts/common.js')

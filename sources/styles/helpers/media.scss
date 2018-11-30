@@ -2,6 +2,12 @@
   .page_wrapper {
     overflow-x: visible;
   }
+  .smiles.smiles--photo .speech-bubble {
+    padding-right: 350px;
+    .page_button {
+      right: 320px;
+    }
+  }
 }
 
 @media screen and (max-width: 1600px) {

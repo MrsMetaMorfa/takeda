@@ -20,6 +20,9 @@ body {
   &.contrast {
     background: $colorBasicContrast radial-gradient(circle, at 88.5417vw 452px, transparent 0vw, transparent 315px, transparentize($colorDarkContrast, 0.37) 315px, transparentize($colorDarkContrast, 0.37) 550px, transparent 550px, transparent 100vw) no-repeat top right;
   }
+  &.middle {
+    background-color: $colorMiddleContrast;
+  }
 }
 a, button {
   display: inline-block;
