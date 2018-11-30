@@ -5,54 +5,76 @@ include templates/header
 block title
     title Simple Title
 
-block pagecontent
-    .page_wrapper
-        +header
-        .page_title
-            h1 Weeks of warmth
+    body
+        .page_wrapper
+            +header
+            .page_title
+                h1.title Weeks of warmth
 
-        .container
-            section.page_content
-                .wrapper.container
-                    -var activityArray = []
-                    -activityArray.push({title: 'Теплый таймер', image: 'assets/images/main-image-01.jpg', link: ''})
-                    -activityArray.push({title: 'Рецепты теплоты', image: 'assets/images/main-image-02.jpg', link: ''})
-                    -activityArray.push({title: 'Теплые фотографии', image: 'assets/images/main-image-03.jpg', link: ''})
-                    -activityArray.push({title: 'Детский словать Takeda', image: 'assets/images/main-image-04.jpg', link: ''})
-                    -activityArray.push({title: 'Теплые заставки', image: 'assets/images/main-image-05.jpg', link: ''})
-                    -activityArray.push({title: '100 способов сказать "Спасибо"', image: 'assets/images/main-image-06.jpg', link: ''})
-                    -activityArray.push({title: 'Видео-благодарности', image: 'assets/images/main-image-07.jpg', link: ''})
-                    -activityArray.push({title: 'Электронаая открытка Takeda', image: 'assets/images/main-image-08.jpg', link: ''})
-                    for item in activityArray
-                        .activity_inner
-                            svg(viewBox="0 0 520 520", width="100%")
-                                path(d="M260,260m-230,0a230,230 0 1,1 460,0a230,230 0 1,1 -460,0", fill="transparent", id="tophalf")
-                                text(style="font-size: 34px; font-weight: 700")
-                                    textPath(xlink:href="#tophalf", startOffset="0%") !{item.title}
-                            picture
-                                img(src=item.image, alt=item.title)
-                            a.page_button(href=item.link) Подробнее
+            .container
+                section.page_content
+                    .wrapper.container
+                        -var activityArray = []
+                        -activityArray.push({title: 'Теплый таймер', image: 'assets/images/main-image-01.jpg', link: ''})
+                        -activityArray.push({title: 'Рецепты теплоты', image: 'assets/images/main-image-02.jpg', link: ''})
+                        -activityArray.push({title: 'Теплые фотографии', image: 'assets/images/main-image-03.jpg', link: ''})
+                        -activityArray.push({title: 'Детский словать Takeda', image: 'assets/images/main-image-04.jpg', link: ''})
+                        -activityArray.push({title: 'Теплые заставки', image: 'assets/images/main-image-05.jpg', link: ''})
+                        -activityArray.push({title: '100 способов сказать "Спасибо"', image: 'assets/images/main-image-06.jpg', link: ''})
+                        -activityArray.push({title: 'Видео-благодарности', image: 'assets/images/main-image-07.jpg', link: ''})
+                        -activityArray.push({title: 'Электронаая открытка Takeda', image: 'assets/images/main-image-08.jpg', link: ''})
+                        for item in activityArray
+                            .activity_inner
+                                svg(viewBox="0 0 520 520", width="100%")
+                                    path(d="M260,260m-230,0a230,230 0 1,1 460,0a230,230 0 1,1 -460,0", fill="transparent", id="tophalf")
+                                    text(style="font-size: 34px; font-weight: 700")
+                                        textPath(xlink:href="#tophalf", startOffset="0%") !{item.title}
+                                picture
+                                    img(src=item.image, alt=item.title)
+                                a.page_button(href=item.link) Подробнее
 
-            aside.smiles.smiles--main
-                .speech-bubble
-                    button.page_button(type='button') Закрыть
-                    p Выбери активность!
-                picture
-                    img(src='assets/images/smile_05.png', alt='')
-                picture
-                    img(src='assets/images/smile_04.png', alt='')
-                picture
-                    img(src='assets/images/smile_01.png', alt='')
-                .smile--bottom
+                aside.smiles.smiles--main
                     .speech-bubble
-                        p Получи предсказание!
-                    img(src='assets/images/smile_02.png', alt='')
-                    a.ball(href='', title='Online-предсказания')
-                        img(src='assets/images/ball.png', alt='Online-предсказания')
-                    a.page_button(href='') Подробнее
+                        button.page_button(type='button') Закрыть
+                        p Выбери активность!
+                    picture
+                        img(src='assets/images/smile_05.png', alt='')
+                    picture
+                        img(src='assets/images/smile_04.png', alt='')
+                    picture
+                        img(src='assets/images/smile_01.png', alt='')
+                    .smile--bottom
+                        .speech-bubble
+                            p Получи предсказание!
+                        img(src='assets/images/smile_02.png', alt='')
+                        a.ball(href='', title='Online-предсказания')
+                            img(src='assets/images/ball.png', alt='Online-предсказания')
+                        a.page_button(href='') Подробнее
+
+        .modal_wrapper
+            .modal(id='comingSoon')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        p Раздел будет доступен позднее
+                    button.page_button(type='button') Назад
+
+            .modal(id='welcome')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        p Здравствуй, Коллега!
+                        p.small Здесь будет приветсвенное слово
+                    button.page_button(type='button') Назад
 
 
-
-
-    script(src='scripts/libs/jquery-3.2.1.min.js')
-    script(src='scripts/common.js')
+        script(src='scripts/libs/jquery-3.2.1.min.js')
+        script(src='scripts/common.js')

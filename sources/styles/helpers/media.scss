@@ -1,0 +1,332 @@
+@media screen and (min-width: 1940px) {
+  .page_wrapper {
+    overflow-x: visible;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .page_title {
+    top: 140px;
+    right: 1.5625vw;
+  }
+  .modal .page_title {
+    top: 40px;
+  }
+  .smiles.smiles--main {
+    margin-top: 80px;
+    picture {
+      &:first-of-type {
+        height: 16.19792vw;
+        width: 16.30208vw;
+      }
+      &:nth-of-type(2) {
+        height: 14.6875vw;
+        width: 14.6875vw;
+      }
+      &:nth-of-type(3) {
+        height: 13.85417vw;
+        width: 14.2708vw;
+      }
+    }
+    .smile--bottom {
+      padding-top: 290px;
+      img:first-of-type {
+        width: 20.83vw;
+        height: 20.15265vw;
+      }
+    }
+  }
+  .smiles.smiles--timer picture {
+    margin-top: 337px;
+  }
+  .smiles.smiles--text {
+    margin-top: 340px;
+    .speech-bubble {
+      top: -30px;
+    }
+  }
+  .page_content--timer .info {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+  .page_content--timer .info img {
+    left: 122px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .page_title {
+    top: 200px;
+  }
+  .modal .page_title {
+    top: 40px;
+  }
+  .page_content {
+    padding-top: 0;
+  }
+  .smiles .speech-bubble {
+    width: 320px;
+    height: 208px;
+    padding: 12.8px 40px 72px;
+    p {
+      font-size: 24px;
+    }
+    .page_button {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .smiles--main .smile--bottom {
+    img:last-of-type {
+      width: 15.15625vw;
+      height: 15.15625vw;
+      margin: 0 auto;
+    }
+  }
+  .smiles.smiles--text .speech-bubble {
+    right: 230px;
+    top: -150px;
+    padding: 20px 45px 100px;
+    background-image: url(../assets/images/bubble.svg);
+    height: 18.427vw;
+    width: 24.51vw;
+    min-height: 218px;
+    min-width: 302px;
+    p {
+      font-size: 20px;
+    }
+  }
+  .page_content--text {
+    p {
+      font-size: 20px;
+    }
+    picture.big {
+      margin-right: 0;
+      margin-bottom: 27px;
+    }
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .page_content {
+    padding-top: 60px;
+  }
+  .page_title {
+    top: 140px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page_title {
+    top: 40px;
+  }
+  .page_content {
+    width: 70%;
+    &--text {
+      width: 75%;
+      padding-left: 30px;
+      padding-right: 30px;
+      .title {
+        font-size: 30px;
+      }
+    }
+  }
+  .smiles.smiles--main {
+    margin-top: 0;
+    width: 30%;
+  }
+  .smiles .speech-bubble:first-of-type {
+    right: 70%;
+  }
+  .smiles.smiles--main .smile--bottom {
+    padding-top: 210px;
+  }
+  .smiles.smiles--main .smile--bottom .speech-bubble {
+    top: -100px;
+    right: 7.25vw;
+  }
+  .smiles.smiles--text {
+    width: 25%;
+    position: relative;
+    margin-top: 360px;
+    .speech-bubble {
+      padding: 20px 30px 80px;
+    }
+  }
+  .page_content--text picture.big {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .page_wrapper > .container {
+    flex-direction: column-reverse;
+  }
+  .page_content {
+    width: 100%;
+  }
+  .smiles.smiles--main {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 650px;
+    margin-top: 60px;
+    padding-top: 150px;
+    .smile--bottom {
+      order: -1;
+      margin-top: 0;
+      padding-left: 125px;
+      margin-left: 0;
+      padding-top: 170px;
+      img:first-of-type {
+        min-width: 160px;
+        min-height: 160px;
+      }
+      img:last-of-type {
+        min-width: 160px;
+        min-height: 160px;
+      }
+      .speech-bubble {
+        top: -35px;
+        left: 0;
+      }
+    }
+    picture {
+      &:first-of-type {
+        min-width: 156px;
+        min-height: 156px;
+        margin: -50px 12.89583vw 0 auto;
+      }
+      &:nth-of-type(2) {
+        min-width: 141px;
+        min-height: 141px;
+      }
+      &:nth-of-type(3) {
+        min-width: 133px;
+        min-height: 137px;
+        margin-top: 85px;
+      }
+    }
+    .speech-bubble {
+      right: 205px;
+    }
+  }
+  .modal_wrapper .modal {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    .page_title {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 0 30px;
+      width: 265px;
+      right: 0;
+      margin-right: 0;
+      top: 0;
+    }
+    .page_button {
+      line-height: 60px;
+      width: 205px;
+    }
+    .speech-bubble {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  .smiles.smiles--text {
+    width: 100%;
+    padding-right: 256px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    picture {
+      position: static;
+    }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .wrapper {
+    width: 100%;
+  }
+  .smiles.smiles--main {
+    picture {
+      position: absolute;
+      &:first-of-type {
+        top: unset;
+        right: -125px;
+        bottom: -333px;
+      }
+      &:nth-of-type(2) {
+        top: unset;
+        right: -40px;
+        bottom: -690px;
+      }
+      &:nth-of-type(3) {
+        top: unset;
+        right: -70px;
+        bottom: -1060px;
+      }
+    }
+    .smile--bottom {
+      padding-left: 45px;
+      padding-top: 240px;
+      img:first-of-type {
+        top: 130px;
+      }
+    }
+    .speech-bubble {
+      top: unset;
+      bottom: -230px;
+      right: 20px;
+    }
+  }
+  .page_title {
+    top: 120px;
+    right: 50%;
+    margin-right: -102.5px;
+  }
+  .page_content {
+    margin-top: 200px;
+  }
+  .modal_wrapper .modal {
+    .page_title {
+      position: relative;
+      flex-direction: column;
+      top: 0;
+      padding: 40px 30px;
+      .subtutle {
+        margin-left: 0;
+        margin-top: 30px;
+      }
+    }
+    .modal_inner {
+      margin: 0 auto auto;
+      picture {
+        top: 142px;
+        left: -76px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal_wrapper .modal {
+    flex-direction: column;
+    .page_title {
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      .subtutle {
+        margin-top: 20px;
+      }
+    }
+    .modal_inner {
+      margin: 0 auto auto;
+    }
+  }
+}

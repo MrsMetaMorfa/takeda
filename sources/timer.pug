@@ -1,0 +1,91 @@
+extends templates/layout/main.pug
+
+include templates/header
+
+block title
+    title Simple Title
+
+    body.contrast
+        .page_wrapper
+            +header
+            .page_title
+                h1.title Weeks of warmth
+                p.subtutle Недели теплоты
+
+            .container
+                section.page_content.page_content--timer
+                    .wrapper.container
+                        aside.info
+                            .speech-bubble
+                                h2.title Удержать в голове все поможет Тёплый таймер! Он напомнит о том, о чём никак нельзя забыть.
+                                p.small Как с ним работать?
+                                ol.small
+                                    li Выберите категорию напоминания.
+                                    li Введите текст напоминания: о чем конкретно вы хотите вспомнить?
+                                    li Введите дату и время напоминания
+                                    li Выберите, где вам удобнее получить напоминание (WhatsApp, Telegram, e-mail)
+                                    li Укажите ваш номер телефона или e-mail
+                                p.small Поздравляем: теперь вы точно не забудете о чем-то важном!
+                            img(src='assets/images/smile_popup.png', alt='')
+                        form.form_timer(method='POST', action='', id='formTimer')
+                            h2.form_title заполните форму, чтобы установить таймер
+                            .form_line
+                                label(for='timerCategory') Выберите категорию таймера
+                                .form_select.custom-select
+                                    select(id='timerCategory', name='timerCategory')
+                                        option(selected, disabled) Выберите категорию
+                                        -var optionArray = []
+                                        -optionArray.push({value: '', title: 'Будильник'})
+                                        -optionArray.push({value: '', title: 'Напоминание о важной деловой встрече'})
+                                        -optionArray.push({value: '', title: 'Напоминание о том, что нужно сходить пообедать'})
+                                        -optionArray.push({value: '', title: 'Напоминание о том, что важно уйти вовремя с работы  '})
+                                        -optionArray.push({value: '', title: 'Напоминание о том, что пора покупать новогодние подарки друзьям и близким'})
+                                        -optionArray.push({value: '', title: 'Напоминание о покупке ёлки'})
+                                        -optionArray.push({value: '', title: 'Напоминание о детском новогоднем мероприятии'})
+                                        for item in optionArray
+                                            option(value=item.value) !{item.title}
+                            .form_line.container.custom-radio
+                                p Укажите, куда отправить напоминание
+                                .input_wrapper
+                                    input(type='radio', id='timerMessengerTelegram', name='timerMessenger', value='timerMessengerTelegram')
+                                    label(for='timerMessengerTelegram') Telegram
+                                .input_wrapper
+                                    input(type='radio', id='timerMessengerWhatsapp', name='timerMessenger', value='timerMessengerWhatsapp')
+                                    label(for='timerMessengerWhatsapp') Whatsapp
+                                .input_wrapper
+                                    input(type='radio', id='timerMessengerEmail', name='timerMessenger', value='timerMessengerEmail')
+                                    label(for='timerMessengerEmail') E-mail
+                            .form_line
+                                label(for='timerPhone') Введите номер телефона
+                                input(type='tel', id='timerPhone', name='timerPhone')
+                            .form_line.container
+                                .input_wrapper
+                                    label(for='timerDate') Дата
+                                    input(type='date', id='timerDate', name='timerDate')
+                                .input_wrapper
+                                    label(for='timerTime') Время
+                                    input(type='time', id='timerTime', name='timerTime')
+                                .input_wrapper
+                                    button.page_button(type='submit') отправить
+
+
+                aside.smiles.smiles--timer
+                    picture
+                        img(src='assets/images/smile_05.png', alt='')
+
+        .modal_wrapper
+            .modal(id='comingSoon')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        p Ваша заявка на таймер получена!
+                    button.page_button(type='button') Назад
+
+
+
+        script(src='scripts/libs/jquery-3.2.1.min.js')
+        script(src='scripts/common.js')

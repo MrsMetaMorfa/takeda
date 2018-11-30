@@ -1,0 +1,174 @@
+input, textarea, select {
+  border: 3px solid $colorDarkerBright;
+  border-radius: 10px;
+  background: $colorBasicLight;
+  width: 100%;
+  display: block;
+  //height: 89px;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 20px 30px;
+  cursor: pointer;
+}
+option {
+  padding: 5px 30px 5px 30px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  &:hover, &:focus, &[selected], &:checked {
+    outline: none;
+    background-color: $colorLightBright;
+    cursor: pointer;
+  }
+}
+.form_timer {
+  width: 56%;
+  .form_title {
+    color: $colorBasicLight;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0 0 20px;
+  }
+  .form_line {
+    margin-bottom: 20px;
+    &.container {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+      .input_wrapper {
+        &:not(:last-of-type) {
+          margin-right: 70px;
+        }
+      }
+    }
+    .form_select.custom-select {
+      position: relative;
+      select {
+        display: none;
+      }
+      .select-selected {
+        border: 3px solid $colorDarkerBright;
+        border-radius: 10px;
+        background: $colorBasicLight;
+        width: 100%;
+        display: block;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 20px 30px;
+        cursor: pointer;
+        &:after {
+          position: absolute;
+          content: "";
+          top: 26px;
+          right: 20px;
+          width: 0;
+          height: 0;
+          border: solid;
+          border-width: 16px 9.5px 0 9.5px;
+          border-color: $colorDarkerBright transparent transparent transparent;
+          z-index: 50;
+        }
+        &.select-arrow-active:after {
+          border-color: transparent transparent $colorDarkerBright transparent;
+          border-width: 0 9.5px 16px 9.5px;
+        }
+      }
+      .select-items div {
+        background: $colorBasicLight;
+        width: 100%;
+        display: block;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 6px 30px;
+        cursor: pointer;
+        &:hover, &:focus, .same-as-selected {
+          background: $colorLightBright;
+        }
+      }
+      .select-items {
+        border: 3px solid $colorDarkerBright;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: $colorBasicLight;
+        padding-top: 30px;
+      }
+      .select-hide {
+        display: none;
+      }
+    }
+    &.custom-radio {
+      flex-wrap: wrap;
+      .input_wrapper {
+        label {
+          position: relative;
+          padding: 2px 0;
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: 500;
+          cursor: pointer;
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+          &:before, &:after {
+            content: '';
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: -45px;
+            top: 50%;
+          }
+          &:before {
+            background: $colorBasicLight;
+            border: 3px solid $colorDarkerBright;
+            width: 19px;
+            height: 19px;
+            margin-top: -12.5px;
+          }
+          &:after {
+            background: $colorDarkerBright;
+            width: 15px;
+            height: 15px;
+            margin-top: -7.5px;
+            margin-right: 5px;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+          }
+          &:hover {
+            border-bottom: 1px solid $colorBasicDark;
+          }
+        }
+        input {
+          display: none;
+          &:checked + label:after {
+            opacity: 1;
+          }
+          &:hover + label, &:focus + label {
+            border-bottom: 1px solid $colorBasicDark;
+          }
+        }
+      }
+    }
+    label, p {
+      font-weight: 500;
+      font-size: 30px;
+      width: 100%;
+      display: block;
+      margin: 0 0 20px;
+    }
+    input[type='date'], input[type='time'] {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 10px;
+      padding-left: 15px;
+      max-width: 216px;
+      font-size: 20px;
+    }
+    .page_button {
+      cursor: pointer;
+    }
+  }
+}
