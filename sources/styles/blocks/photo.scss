@@ -21,6 +21,7 @@
       position: relative;
       z-index: 1;
       cursor: pointer;
+      font-size: 20px;
     }
   }
 }
@@ -60,8 +61,7 @@
     .title {
       font-size: 30px;
       font-weight: 900;
-      text-transform: uppercase;
-      margin: 1em 0;
+      margin: 0 0 1em;
       text-align: center;
     }
     ol {
