@@ -164,6 +164,15 @@
   }
   .page_content {
     width: 100%;
+    &--text {
+      padding-top: 0;
+      picture.big {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+        float: none;
+      }
+    }
   }
   .smiles.smiles--main {
     width: 100%;
@@ -237,19 +246,38 @@
   }
   .smiles.smiles--text {
     width: 100%;
-    padding-right: 256px;
+    padding-right: 33%;
     margin-top: 60px;
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     picture {
       position: static;
+      &:nth-of-type(3) {
+        position: absolute;
+        right: unset;
+        left: 15px;
+        top: 340px;
+        z-index: -1;
+      }
+      &:nth-of-type(2) {
+        margin-top: -40px;
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .speech-bubble {
+      background-image: url("../assets/images/bubble_top-right.png");
+      padding: 25px 65px 25px 30px;
+      min-width: 320px;
+      min-height: 138px;
+      top: 173px;
+      right: 56%;
     }
   }
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 660px){
   .wrapper {
     width: 100%;
   }
@@ -292,6 +320,43 @@
   }
   .page_content {
     margin-top: 200px;
+    &.page_content--text {
+      margin-top: 0;
+      padding-top: 60px;
+      padding-left: 6px;
+      padding-right: 6px;
+      picture {
+        float: none;
+        display: block;
+        margin: 15px auto;
+      }
+      picture.big {
+        margin: 0 auto 30px;
+      }
+    }
+  }
+  .smiles.smiles--text {
+    margin-top: 320px;
+    padding-right: 0;
+    .speech-bubble {
+      right: 230px;
+    }
+    picture {
+      &:nth-of-type(3) {
+        top: -320px;
+        margin-right: -98px;
+        left: unset;
+        right: 0;
+        z-index: -1;
+      }
+      &:nth-of-type(2) {
+        position: absolute;
+        top: -140px;
+        right: unset;
+        left: -106px;
+        z-index: -1;
+      }
+    }
   }
   .modal_wrapper .modal {
     .page_title {
@@ -312,6 +377,7 @@
       }
     }
   }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -327,6 +393,11 @@
     }
     .modal_inner {
       margin: 0 auto auto;
+    }
+  }
+  .smiles.smiles--text {
+    .speech-bubble {
+      right: 0;
     }
   }
 }
