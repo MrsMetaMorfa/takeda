@@ -1067,7 +1067,7 @@ option {
   width: 100%; }
   option:hover, option:focus, option[selected], option:checked {
     outline: none;
-    background-color: rgba(209, 155, 25, 0.48);
+    background-color: rgba(209, 155, 25, 0.52);
     cursor: pointer; }
 
 .form_timer {
@@ -1128,7 +1128,7 @@ option {
         padding: 6px 30px;
         cursor: pointer; }
         .form_timer .form_line .form_select.custom-select .select-items div:hover, .form_timer .form_line .form_select.custom-select .select-items div:focus, .form_timer .form_line .form_select.custom-select .select-items div .same-as-selected {
-          background: rgba(209, 155, 25, 0.48); }
+          background: rgba(209, 155, 25, 0.52); }
       .form_timer .form_line .form_select.custom-select .select-items {
         border: 3px solid #F39200;
         border-radius: 10px;
@@ -1374,6 +1374,96 @@ option {
       text-align: center; }
     .smiles.smiles--photo .speech-bubble .page_button {
       right: 16.66667vw; }
+
+.wallpaper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .wallpaper .smiles.smiles--photo {
+    width: 100%;
+    padding: 20px 280px 20px 65px;
+    margin-top: 0; }
+    .wallpaper .smiles.smiles--photo .speech-bubble {
+      background-image: url("../assets/images/bubble_long-small.png");
+      width: 74.89583vw;
+      height: 6.0417vw;
+      max-width: 1438px;
+      min-height: 116px;
+      top: 12px;
+      margin-top: 0;
+      padding: 20px 160px 40px 50px;
+      right: unset;
+      left: 3.125vw; }
+      .wallpaper .smiles.smiles--photo .speech-bubble p {
+        font-size: 20px; }
+    .wallpaper .smiles.smiles--photo picture:first-of-type {
+      width: 152px;
+      height: 152px;
+      margin-top: 0;
+      margin-right: 10px; }
+    .wallpaper .smiles.smiles--photo picture:last-of-type {
+      position: absolute;
+      width: 214px;
+      height: 214px;
+      top: 60px;
+      right: -70px; }
+  .wallpaper .page_content {
+    padding-top: 0; }
+    .wallpaper .page_content--photo {
+      width: calc(100% - 100px); }
+    .wallpaper .page_content .photo_wrapper p {
+      margin: 0 0 1em;
+      padding: 0 30px;
+      color: white;
+      text-transform: uppercase;
+      font-size: 22px; }
+    .wallpaper .page_content .photo_wrapper .photo_inner {
+      display: block;
+      width: 100%;
+      border: 7px solid white;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative; }
+      .wallpaper .page_content .photo_wrapper .photo_inner picture {
+        overflow: visible;
+        border: none;
+        border-radius: 0; }
+      .wallpaper .page_content .photo_wrapper .photo_inner .photo_sizes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(215, 186, 69, 0.86);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        padding: 17px; }
+        .wallpaper .page_content .photo_wrapper .photo_inner .photo_sizes .page_button.small {
+          margin: 0 35px;
+          width: 70px;
+          height: 70px;
+          padding: 10px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center; }
+          .wallpaper .page_content .photo_wrapper .photo_inner .photo_sizes .page_button.small img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto; }
 
 @media screen and (min-width: 1940px) {
   .page_wrapper {

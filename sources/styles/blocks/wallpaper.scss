@@ -1,0 +1,92 @@
+.wallpaper {
+  flex-direction: column;
+  .smiles.smiles--photo {
+    width: 100%;
+    padding: 20px 280px 20px 65px;
+    margin-top: 0;
+    .speech-bubble {
+      background-image: url("../assets/images/bubble_long-small.png");
+      width: 74.89583vw;
+      height: 6.0417vw;
+      max-width: 1438px;
+      min-height: 116px;
+      top: 12px;
+      margin-top: 0;
+      padding: 20px 160px 40px 50px;
+      right: unset;
+      left: 3.125vw;
+      p {
+        font-size: 20px;
+      }
+    }
+    picture {
+      &:first-of-type {
+        width: 152px;
+        height: 152px;
+        margin-top: 0;
+        margin-right: 10px;
+      }
+      &:last-of-type {
+        position: absolute;
+        width: 214px;
+        height: 214px;
+        top: 60px;
+        right: -70px;
+      }
+    }
+  }
+  .page_content {
+    padding-top: 0;
+    &--photo {
+      width: calc(100% - 100px);
+    }
+    .photo_wrapper {
+      p {
+        margin: 0 0 1em;
+        padding: 0 30px;
+        color: $colorBasicLight;
+        text-transform: uppercase;
+        font-size: 22px;
+      }
+      .photo_inner {
+        display: block;
+        width: 100%;
+        border: 7px solid $colorBasicLight;
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+        picture {
+          overflow: visible;
+          border: none;
+          border-radius: 0;
+        }
+        .photo_sizes {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $colorLighterBright;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          padding: 17px;
+          .page_button.small {
+            margin: 0 35px;
+            width: 70px;
+            height: 70px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
