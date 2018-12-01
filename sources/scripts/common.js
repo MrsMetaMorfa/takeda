@@ -11,8 +11,8 @@ window.onload = function () {
         console.log(this.parentNode);
         this.parentNode.classList.toggle('disabled');
     }
-    if (document.querySelector('.speech-bubble button')) {
-        document.querySelector('.speech-bubble button').addEventListener('click', visibilityToggle, false);
+    if (document.querySelector('.speech-bubble .close')) {
+        document.querySelector('.speech-bubble .close').addEventListener('click', visibilityToggle, false);
     }
 
     if (document.querySelector('.custom-select')) {
@@ -92,74 +92,71 @@ window.onload = function () {
     then close all select boxes:*/
     document.addEventListener("click", closeAllSelect);
 
-    // Modal transition
-    // if (document.querySelector('.modal')) {
-    //     var modalTrigger = document.querySelectorAll('.open-modal'),
-    //         transitionLayer = document.querySelector('.transition-layer'),
-    //         transitionBackground = transitionLayer.querySelector('div'),
-    //         modalWindow = document.querySelectorAll('.modal');
-    //
-    //     var frameProportion = 1.78, //png frame aspect ratio
-    //         frames = transitionLayer.getAttribute('data-frame'), //number of png frames
-    //         resize = false,
-    //         delay = 800;
-    //
-    //     //open modal window
-    //     for (var i = 0; i < modalTrigger.length; i++) {
-    //         modalTrigger[i].addEventListener("click", openModalWindow, false);
-    //     }
-    //
-    //     //modalTrigger.addEventListener('click', openModalWindow, false);
-    //     function openModalWindow(event) {
-    //         event.preventDefault();
-    //         var modalId = event.target.getAttribute('data-target'), modalCurrent;
-    //         transitionLayer.classList.add('visible');
-    //         transitionLayer.classList.add('opening');
-    //         for (var i = 0; i < modalWindow.length; i++) {
-    //             if (modalWindow[i].getAttribute('id') == modalId) {
-    //                 modalCurrent = modalWindow[i];
-    //             }
-    //         }
-    //         setTimeout(function () {
-    //             modalCurrent.classList.add('visible');
-    //             transitionLayer.classList.remove('opening');
-    //         }, delay);
-    //         modalCurrent.querySelector('.close-modal').addEventListener('click', closeModalWindow, false);
-    //     }
-    //
-    //     //close modal window
-    //     function closeModalWindow(event) {
-    //         event.preventDefault();
-    //         transitionLayer.classList.add('closing');
-    //         event.target.parentNode.parentNode.classList.remove('visible');
-    //         setTimeout(
-    //             function () {
-    //                 transitionLayer.classList.remove('closing');
-    //                 transitionLayer.classList.remove('opening');
-    //                 transitionLayer.classList.remove('visible');
-    //             }, delay);
-    //     }
-    //
-    //     function setLayerDimensions() {
-    //         var windowWidth = $(window).width(),
-    //             windowHeight = $(window).height(),
-    //             layerHeight, layerWidth;
-    //
-    //         if (windowWidth / windowHeight > frameProportion) {
-    //             layerWidth = windowWidth;
-    //             layerHeight = layerWidth / frameProportion;
-    //         } else {
-    //             layerHeight = windowHeight * 1.2;
-    //             layerWidth = layerHeight * frameProportion;
-    //         }
-    //
-    //         transitionBackground.css({
-    //             'width': layerWidth * frames + 'px',
-    //             'height': layerHeight + 'px',
-    //         });
-    //
-    //         resize = false;
-    //     }
-    // }
+    // init Masonry
+    if (document.querySelector('.mansonry .container')) {
+        var grid = document.querySelector('.page_content--tiles .container');
+
+        var msnry = new Masonry(grid, {
+            itemSelector: '.tile',
+            columnWidth: '.tile-width',
+            percentPosition: true
+        });
+    }
+
+    function changeSize() {
+        this.previousElementSibling.querySelector('.photo_sizes').classList.toggle('disabled');
+        this.classList.toggle('disabled');
+    }
+    if (document.querySelector('.change-size')) {
+        var buttons = document.querySelectorAll('.change-size');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", changeSize, false);
+        }
+    }
+
+    // Modal
+    var modalTrigger = document.querySelectorAll('.open-modal'),
+        transitionLayer = document.querySelector('.modal_wrapper'),
+        modalWindow = document.querySelectorAll('.modal');
+
+    //open modal window
+    for (var i = 0; i < modalTrigger.length; i++) {
+        modalTrigger[i].addEventListener("click", openModalWindow, false);
+    }
+
+    //modalTrigger.addEventListener('click', openModalWindow, false);
+    function openModalWindow(event) {
+        event.preventDefault();
+        var modalId = event.target.getAttribute('data-target'), modalCurrent;
+        transitionLayer.classList.add('visible');
+        transitionLayer.classList.add('open');
+        var modalCurrent;
+        for (var i = 0; i < modalWindow.length; i++) {
+            modalWindow[i].classList.remove('visible');
+            modalWindow[i].classList.remove('open');
+            if (modalWindow[i].getAttribute('id') == modalId) {
+                modalCurrent = modalWindow[i];
+            }
+        }
+        modalCurrent.classList.add('visible');
+        modalCurrent.classList.add('open');
+
+        modalCurrent.querySelector('.close-popup').addEventListener('click', closeModalWindow, false);
+    }
+
+
+    //close modal window
+    function closeModalWindow(event) {
+        event.preventDefault();
+        event.target.parentNode.parentNode.classList.remove('open');
+        transitionLayer.classList.remove('open');
+        setTimeout(function () {
+            event.target.parentNode.parentNode.classList.remove('visible');
+            transitionLayer.classList.remove('visible');
+        }, 200);
+    }
+
+    document.querySelector('.modal.visible').querySelector('.close-popup').addEventListener('click', closeModalWindow, false);
+
 };
 

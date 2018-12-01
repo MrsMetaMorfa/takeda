@@ -9,15 +9,15 @@ mixin header()
             ul.navigation.container
                 -var navArray = []
                 -navArray.push({link: 'index.html', title: 'Главная'})
-                -navArray.push({link: '', title: 'Тёплый <br>таймер'})
-                -navArray.push({link: '', title: 'Рецепты <br>теплоты'})
-                -navArray.push({link: '', title: 'Тёплые <br>фотографии'})
-                -navArray.push({link: '', title: 'Детский <br>словарь'})
-                -navArray.push({link: '', title: 'Теплые <br>заставки'})
-                -navArray.push({link: '', title: '100&nbsp;способов <br>сказать&nbsp;"Спасибо"'})
-                -navArray.push({link: '', title: 'Видео-<br>благодарности'})
-                -navArray.push({link: '', title: 'Электронная <br>открытка'})
-                -navArray.push({link: '', title: 'Online-<br>предсказания'})
+                -navArray.push({link: 'timer.html', title: 'Тёплый <br>таймер'})
+                -navArray.push({link: 'recipes.html', title: 'Рецепты <br>теплоты'})
+                -navArray.push({link: 'photo.html', title: 'Тёплые <br>фотографии'})
+                -navArray.push({link: 'kids_vocabulary.html', title: 'Детский <br>словарь'})
+                -navArray.push({link: 'wallpaper.html', title: 'Теплые <br>заставки'})
+                -navArray.push({link: 'thanx.html', title: '100&nbsp;способов <br>сказать&nbsp;"Спасибо"'})
+                -navArray.push({link: 'video.html', title: 'Видео-<br>благодарности'})
+                -navArray.push({link: 'card.html', title: 'Электронная <br>открытка'})
+                -navArray.push({link: 'online.html', title: 'Online-<br>предсказания'})
                 for item in navArray
                     li
                         a(href=item.link) !{item.title}

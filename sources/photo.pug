@@ -20,12 +20,12 @@ block title
                             .photo_wrapper
                                 picture
                                     img(src='assets/images/main-image-12.jpg', alt='')
-                                button.page_button(type='button') Загрузить фотографию
+                                a.page_button.open-modal(href='#addNewPhoto', data-target='addNewPhoto') Загрузить фотографию
                             -i++
 
                 aside.smiles.smiles--photo
                     .speech-bubble
-                        button.page_button(type='button') Закрыть
+                        button.page_button.small.close(type='button') Закрыть
                         h2.title Делитесь тёплыми<br>фотографиями с коллегами!
                         ol
                             li Выберите фотографию, которая вызывает у вас приятные воспоминания.
@@ -39,6 +39,34 @@ block title
                         img(src='assets/images/smile_07.png', alt='')
 
         .modal_wrapper
+
+            .modal(id='addNewPhoto')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    p.title Выберите оформление
+                    .speech-bubble
+                        form.form.add-photo(method='POST', action='', id='addNewPhotoForm')
+                            .form_line
+                                button.page_button.small(type='button') Prev
+                                .photo-variations
+                                    -var i = 0
+                                    while i < 6
+                                        -i++
+                                        .variant()
+                                            img(src='main-image-12.jpg', alt='')
+                                button.page_button.small(type='button') Next
+                            .form_line
+                                button.page_button.big(type='button', onclick='') Загрузить фоторафию
+                                input(type='file', name='termFile', id='termFile')
+                                span.filename abcas82fmyphoto1.jpgabcas82fmyphoto1.3gp
+                            .form_line
+                                button.page_button.big.open-modal(type='submit', form='addNewPhotoForm', data-target='photoDownloaded', onsubmit='e.preventDefault()') Загрузить в раздел
+                                button.page_button.big.close-popup(type='button') Сохранить на компьютер
+
             .modal(id='photoDownloaded')
                 .page_title
                     p.title weeks of warmth
@@ -48,9 +76,7 @@ block title
                         img(src='assets/images/smile_popup.png', alt='')
                     .speech-bubble
                         p Спасибо!<br>Ваша фотография загружена!
-                    button.page_button(type='button') Назад
+                    button.page_button.close-popup(type='button') Назад
 
 
-
-        script(src='scripts/libs/jquery-3.2.1.min.js')
         script(src='scripts/common.js')

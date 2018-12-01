@@ -1,0 +1,74 @@
+extends templates/layout/main.pug
+
+include templates/header
+
+block title
+    title Simple Title
+
+    body.middle
+        .page_wrapper
+            +header
+            .page_title
+                h1.title Weeks of warmth
+                p.subtutle Недели теплоты
+
+            .container.vocabulary.card
+                aside.smiles.smiles--kids
+                    .speech-bubble
+                        h2.title.centered Почта Takeda
+                        p.centered Когда ты последний раз отправлял почтовую открытку? Наверняка, давно! Для этого нужно купить открытку, конверт и марки, пойти на почту, отстоять очередь. Как насчет более быстрого способа сделать приятно коллегам?
+                        ol
+                            li Выбери один из трех видов почтовой открытки.
+                            li Укажи e-mail получателя.
+                            li Нажми кнопку «Выбрать и отправить», и уже через секунду твой коллега станет счастливее.
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    picture
+                        img(src='assets/images/smile_03.png', alt='')
+
+                section.page_content.page_content--photo
+                    .wrapper.container
+                        .photo_wrapper
+                            picture
+                                img(src='assets/images/yellow.jpg', alt='')
+                            a.page_button.open-modal(href='#addCard', data-target='addCard') Выбрать
+                        .photo_wrapper
+                            picture
+                                img(src='assets/images/blue.jpg', alt='')
+                            a.page_button.open-modal(href='#addCard', data-target='addCard') Выбрать
+                        .photo_wrapper
+                            picture
+                                img(src='assets/images/green.jpg', alt='')
+                            a.page_button.open-modal(href='#addCard', data-target='addCard') Выбрать
+
+
+        .modal_wrapper
+            .modal(id='addCard')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        form.form.add-card(method='POST', action='', id='addCardForm')
+                            .form_line
+                                label(for='cardMessage') Введите текст
+                                textarea(name='cardMessage', id='cardMessage')
+                            .form_line
+                                label(for='cardEmail') Введите e-mail Коллеги
+                                input(type='email', name='cardEmail', id='cardEmail')
+                            button.page_button.big.open-modal(type='submit', data-target='cardThanks', onsubmit='e.preventDefault();') Отправить открытку
+
+            .modal(id='cardThanks')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        p Спасибо!<br>Ваша открытка отправлена <br>Коллеге на почту!
+                    button.page_button.close-popup(type='button') Хорошо
+
+        script(src='scripts/common.js')

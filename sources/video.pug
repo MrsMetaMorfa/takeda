@@ -1,0 +1,83 @@
+extends templates/layout/main.pug
+
+include templates/header
+
+block title
+    title Simple Title
+
+    body.contrast
+        .page_wrapper
+            +header
+            .page_title
+                h1.title Weeks of warmth
+                p.subtutle Недели теплоты
+
+            .container.vocabulary.video
+                aside.smiles.smiles--kids
+                    .speech-bubble
+                        h2.title Видео-благодарность для тебя. <br>Запиши короткое видео, чтобы отблагодарить коллегу.
+                        p Видеообращение – отличный способ поблагодарить коллегу за все, что хочется: выполненную просьбу, качественную и эффективную работу, поддержку. Сказать спасибо – очень просто, однако, сколько теплоты это приносит!
+                        p Необходимо выполнить всего три шага:
+                        ol
+                            li Запиши видео (горизонтальное, не более 1 минуты, не более  100 мб.).
+                            li Нажми кнопку «Загрузи видео».
+                            li Заполни поле «От кого» – напиши свое ФИО. В поле «Кому» - укажи адресата, выбрав его из выпадающего списка.
+                        a.page_button.big.open-modal(href='#addNewVideo', data-target='addNewVideo') Добавить свое видео
+
+                    picture
+                        img(src='assets/images/smile_05.png', alt='')
+                    picture
+                        img(src='assets/images/smile_04.png', alt='')
+                    picture
+                        img(src='assets/images/smile_01.png', alt='')
+
+                section.page_content.page_content--tiles
+                    .wrapper.container
+                        -var i = 0
+                        while i < 6
+                            .tile
+                                .tile_wrapper
+                                    picture.icon
+                                        img(src='assets/images/user.png', alt='Пользователь')
+                                    p.user_name иван иванов
+                                    .video_wrapper
+                                        picture
+                                            img(src='assets/images/kids-picture.jpg')
+                                        a.page_button.small(href='#') Воспроизвести
+                                            img(src='assets/images/play.png', alt='Воспроизвести')
+                                    a.page_button.big.open-modal(href='#addNewVideo', data-target='addNewVideo') Добавить свое видео
+                            -i++
+
+        .modal_wrapper
+            .modal(id='addNewVideo')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        p.title Выложите <br>своё видео-обращение!
+                        form.form.add-video(method='POST', action='', id='addNewVideoForm')
+                            .form_line
+                                label(for='videoAuthor') Укажите свое имя и фамилию
+                                input(type='text', name='videoAuthor', id='videoAuthor')
+                            .form_line
+                                button.page_button(type='button', onclick='') Прикрепить видео
+                                input(type='file', name='termFile', id='termFile')
+                                span.filename abcas82fmyphoto1.jpgabcas82fmyphoto1.3gp
+                            button.page_button.bid.open-modal(type='submit', form='addNewVideoForm', data-target='videoThanx', onclick='e.preventDefault()') Загрузить видео
+
+            .modal(id='videoThanx')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        p.title Спасибо тебе! <br>В Мире Takeda стало теплее!
+                    button.page_button.close-popup(type='button') Назад
+
+
+        script(src='scripts/common.js')

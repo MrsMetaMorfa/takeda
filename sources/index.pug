@@ -15,14 +15,14 @@ block title
                 section.page_content
                     .wrapper.container
                         -var activityArray = []
-                        -activityArray.push({title: 'Теплый таймер', image: 'assets/images/main-image-01.jpg', link: ''})
-                        -activityArray.push({title: 'Рецепты теплоты', image: 'assets/images/main-image-02.jpg', link: ''})
-                        -activityArray.push({title: 'Теплые фотографии', image: 'assets/images/main-image-03.jpg', link: ''})
-                        -activityArray.push({title: 'Детский словать Takeda', image: 'assets/images/main-image-04.jpg', link: ''})
-                        -activityArray.push({title: 'Теплые заставки', image: 'assets/images/main-image-05.jpg', link: ''})
-                        -activityArray.push({title: '100 способов сказать "Спасибо"', image: 'assets/images/main-image-06.jpg', link: ''})
-                        -activityArray.push({title: 'Видео-благодарности', image: 'assets/images/main-image-07.jpg', link: ''})
-                        -activityArray.push({title: 'Электронаая открытка Takeda', image: 'assets/images/main-image-08.jpg', link: ''})
+                        -activityArray.push({title: 'Теплый таймер', image: 'assets/images/main-image-01.jpg', link: 'timer.html'})
+                        -activityArray.push({title: 'Рецепты теплоты', image: 'assets/images/main-image-02.jpg', link: 'recipes.html'})
+                        -activityArray.push({title: 'Теплые фотографии', image: 'assets/images/main-image-03.jpg', link: 'photo.html'})
+                        -activityArray.push({title: 'Детский словать Takeda', image: 'assets/images/main-image-04.jpg', link: 'kids_vocabulary.html'})
+                        -activityArray.push({title: 'Теплые заставки', image: 'assets/images/main-image-05.jpg', link: 'wallpaper.html'})
+                        -activityArray.push({title: '100 способов сказать "Спасибо"', image: 'assets/images/main-image-06.jpg', link: 'thanx.html'})
+                        -activityArray.push({title: 'Видео-благодарности', image: 'assets/images/main-image-07.jpg', link: 'video.html'})
+                        -activityArray.push({title: 'Электронаая открытка Takeda', image: 'assets/images/main-image-08.jpg', link: 'card.html'})
                         for item in activityArray
                             .activity_inner
                                 svg(viewBox="0 0 520 520", width="100%")
@@ -35,7 +35,7 @@ block title
 
                 aside.smiles.smiles--main
                     .speech-bubble
-                        button.page_button(type='button') Закрыть
+                        button.page_button.small.close(type='button') Закрыть
                         p Выбери активность!
                     picture
                         img(src='assets/images/smile_05.png', alt='')
@@ -47,11 +47,11 @@ block title
                         .speech-bubble
                             p Получи предсказание!
                         img(src='assets/images/smile_02.png', alt='')
-                        a.ball(href='', title='Online-предсказания')
+                        a.ball(href='online.html', title='Online-предсказания')
                             img(src='assets/images/ball.png', alt='Online-предсказания')
-                        a.page_button(href='') Подробнее
+                        a.page_button(href='online.html') Подробнее
 
-        .modal_wrapper
+        .modal_wrapper.visible
             .modal(id='comingSoon')
                 .page_title
                     p.title weeks of warmth
@@ -61,9 +61,9 @@ block title
                         img(src='assets/images/smile_popup.png', alt='')
                     .speech-bubble
                         p Раздел будет доступен позднее
-                    button.page_button(type='button') Назад
+                    button.page_button.close-popup(type='button') Назад
 
-            .modal(id='welcome')
+            .modal.visible(id='welcome')
                 .page_title
                     p.title weeks of warmth
                     p.subtutle Недели теплоты
@@ -73,8 +73,6 @@ block title
                     .speech-bubble
                         p Здравствуй, Коллега!
                         p.small Здесь будет приветсвенное слово
-                    button.page_button(type='button') Назад
+                    button.page_button.close-popup(type='button', onclick='closeModalWindow()') Назад
 
-
-        script(src='scripts/libs/jquery-3.2.1.min.js')
         script(src='scripts/common.js')

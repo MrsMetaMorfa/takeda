@@ -16,7 +16,7 @@ block title
                 section.page_content.page_content--timer
                     .wrapper.container
                         aside.info
-                            .speech-bubble
+                            .speech-bubble.tall
                                 h2.title Удержать в голове все поможет Тёплый таймер! Он напомнит о том, о чём никак нельзя забыть.
                                 p.small Как с ним работать?
                                 ol.small
@@ -66,7 +66,7 @@ block title
                                     label(for='timerTime') Время
                                     input(type='time', id='timerTime', name='timerTime')
                                 .input_wrapper
-                                    button.page_button(type='submit') отправить
+                                    button.page_button.open-modal(type='submit' onsubmit='e.preventDefault();' data-target='timerSubmited') отправить
 
 
                 aside.smiles.smiles--timer
@@ -74,7 +74,7 @@ block title
                         img(src='assets/images/smile_05.png', alt='')
 
         .modal_wrapper
-            .modal(id='comingSoon')
+            .modal(id='timerSubmited')
                 .page_title
                     p.title weeks of warmth
                     p.subtutle Недели теплоты
@@ -83,9 +83,6 @@ block title
                         img(src='assets/images/smile_popup.png', alt='')
                     .speech-bubble
                         p Ваша заявка на таймер получена!
-                    button.page_button(type='button') Назад
+                    button.page_button.close-popup(type='button') Назад
 
-
-
-        script(src='scripts/libs/jquery-3.2.1.min.js')
         script(src='scripts/common.js')

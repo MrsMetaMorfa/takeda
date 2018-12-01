@@ -1,0 +1,157 @@
+extends templates/layout/main.pug
+
+include templates/header
+
+block title
+    title Simple Title
+
+    body
+        .page_wrapper
+            +header
+            .page_title
+                h1.title Weeks of warmth
+                p.subtutle Недели теплоты
+
+            .container.vocabulary.mansonry
+                aside.smiles.smiles--kids
+                    .speech-bubble
+                        h2.title.centered Ваши дети знают, чем вы занимаетесь на работе? <br>Мы предлагаем вам спросить у них, значение одного <br>или нескольких слов из списка ниже.
+                        ol
+                            li Попросите своего ребенка дать определение одному из следующих слов:
+                                p.wordslist
+                                    span Дженерик
+                                    span Такедаизм
+                                    span Работа в полях
+                                    span Цикловик
+                                    span Бренд-менеджер
+                                    span Рецептурный препарат
+                                    span Yammer
+                                    span Биологически активные добавки
+                                    span Дистрибьютер
+                                    span Фармацевт
+                                    span Инновации
+                                    span Портфель препаратов
+                                    span Медицинский представитель
+                                    span Лаборатория
+                                    span Завод
+                                    span Таблетка
+                                    span Менеджер
+                                    span Совещание
+                                    span Врач
+                                    span Ампула
+                            li Также ответ можно нарисовать
+                            li Загрузите фотографию рисунка или заполните текстовую форму.
+                        p.centered Из полученных ответов мы создадим Детский словарь Takeda с новым видением привычных нам вещей!
+                        a.page_button.open-modal.long(href='#addNewTerm', data-target='addNewTerm') Добавить свой вариант
+
+                    picture
+                        img(src='assets/images/smile_05.png', alt='')
+                    picture
+                        img(src='assets/images/smile_04.png', alt='')
+                    picture
+                        img(src='assets/images/smile_01.png', alt='')
+
+                section.page_content.page_content--tiles
+                    .wrapper.container
+                        .tile-width
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+                                picture
+                                    img(src='assets/images/kids-picture.jpg')
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+                                picture
+                                    img(src='assets/images/kids-picture.jpg')
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+                                picture
+                                    img(src='assets/images/kids-picture.jpg')
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+                                picture
+                                    img(src='assets/images/kids-picture.jpg')
+                        .tile
+                            .tile_wrapper
+                                picture.icon
+                                    img(src='assets/images/user.png', alt='Пользователь')
+                                p.user_name иван иванов
+                                p.user_message Мой ребенок говорит, что Дженерик - это супергерой из серии Marvel. Это сообщение должно укладываться в 200 символов и ни знаком больше! Возможно, у меня это получится, но это не точно! Конец цитаты.
+
+
+
+        .modal_wrapper
+            .modal(id='addNewTerm')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_popup.png', alt='')
+                    .speech-bubble
+                        p.title Пополните детский словарь Takeda!
+                        form.form.add-term(method='POST', action='', id='addNewTermForm')
+                            .form_line
+                                label(for='termName') Введите термин
+                                input(type='text', name='termName', id='termName')
+                            .form_line
+                                label(for='termValue') Введите его детское опрелделение
+                                input(type='text', name='termValue', id='termValue')
+                            .form_line
+                                label(for='termAutor') Укажите автора
+                                input(type='text', name='termAutor', id='termAutor')
+                            .form_line
+                                button.page_button.long(type='button', onclick='') Загрузить фотографию
+                                input(type='file', name='termFile', id='termFile')
+                                span.filename abcas82fmyphoto1.jpgabcas82fmyphoto1.jpg
+                    button.page_button.close-popup(type='submit', form='addNewTermForm') Далее
+
+
+        script(src='scripts/libs/masonry.pkgd.min.js')
+        script(src='scripts/common.js')

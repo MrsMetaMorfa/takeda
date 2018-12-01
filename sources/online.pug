@@ -1,0 +1,46 @@
+extends templates/layout/main.pug
+
+include templates/header
+
+block title
+    title Simple Title
+
+    body
+        .page_wrapper
+            +header
+            .page_title
+                h1.title Weeks of warmth
+                p.subtutle Недели теплоты
+
+            .container.online
+                aside.smiles
+                    .speech-bubble
+                        h2.title Нажми на кнопку, чтобы узнать что ждёт тебя сегодня!
+                    img(src='assets/images/smile_2.png', alt='')
+
+                section.page_content
+                    .wrapper.container
+                        .ball_outer
+                            a.ball(href='', title='Online-предсказания')
+                                img(src='assets/images/ball.png', alt='Online-предсказания')
+                            a.page_button.open-modal(href='#prediction', data-target='prediction') Заглянуть в будущее
+
+                aside.smiles
+                    picture
+                        img(src='assets/images/smile_03.png', alt='')
+
+
+        .modal_wrapper
+            .modal(id='prediction')
+                .page_title
+                    p.title weeks of warmth
+                    p.subtutle Недели теплоты
+                .modal_inner
+                    picture
+                        img(src='assets/images/smile_08.png', alt='')
+                    .speech-bubble
+                        p.small Улыбайтесь! <br>Ваша улыбка сегодня принесет удачу.
+                    button.page_button.close-popup(type='button') Спасибо
+
+
+        script(src='scripts/common.js')

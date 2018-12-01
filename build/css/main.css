@@ -652,7 +652,7 @@ img {
       font-weight: 700;
       text-align: center;
       margin: 0; }
-    .smiles .speech-bubble .page_button {
+    .smiles .speech-bubble .page_button.close {
       position: absolute;
       z-index: 20;
       top: -20px;
@@ -661,9 +661,9 @@ img {
       width: 76px;
       background-image: url(../assets/images/button-hover.png);
       cursor: pointer; }
-      .smiles .speech-bubble .page_button:hover, .smiles .speech-bubble .page_button:focus {
+      .smiles .speech-bubble .page_button.close:hover, .smiles .speech-bubble .page_button.close:focus {
         background-image: url(../assets/images/button.png); }
-      .smiles .speech-bubble .page_button:before, .smiles .speech-bubble .page_button:after {
+      .smiles .speech-bubble .page_button.close:before, .smiles .speech-bubble .page_button.close:after {
         content: '';
         width: 60%;
         height: 4px;
@@ -673,11 +673,11 @@ img {
         top: 50%;
         left: 20%;
         margin-top: -2px; }
-      .smiles .speech-bubble .page_button:before {
+      .smiles .speech-bubble .page_button.close:before {
         -webkit-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
                 transform: rotate(45deg); }
-      .smiles .speech-bubble .page_button:after {
+      .smiles .speech-bubble .page_button.close:after {
         -webkit-transform: rotate(-45deg);
             -ms-transform: rotate(-45deg);
                 transform: rotate(-45deg); }
@@ -900,9 +900,9 @@ img {
           -webkit-transition: width 0.2s ease-in-out;
           -o-transition: width 0.2s ease-in-out;
           transition: width 0.2s ease-in-out; }
-        .header .navigation li a:hover, .header .navigation li a:focus {
+        .header .navigation li a:hover, .header .navigation li a:focus, .header .navigation li a.current {
           outline: none; }
-          .header .navigation li a:hover:after, .header .navigation li a:focus:after {
+          .header .navigation li a:hover:after, .header .navigation li a:focus:after, .header .navigation li a.current:after {
             width: 100%; }
   .header .menu_btn {
     display: none; }
@@ -1244,6 +1244,20 @@ option {
     margin: 0 0 1em; }
   .page_content--text p {
     margin: 0 0 1em; }
+  .page_content--text ol {
+    margin: 1em 0;
+    counter-reset: steps;
+    list-style-type: none;
+    padding: 0;
+    -webkit-column-count: 2;
+            column-count: 2;
+    width: 100%; }
+    .page_content--text ol li {
+      padding-right: 30px;
+      display: inline-block; }
+      .page_content--text ol li:before {
+        counter-increment: steps;
+        content: counter(steps) ". "; }
 
 .smiles.smiles--text {
   width: 228px;
@@ -1418,6 +1432,8 @@ option {
       color: white;
       text-transform: uppercase;
       font-size: 22px; }
+    .wallpaper .page_content .photo_wrapper .page_button {
+      width: 256px; }
     .wallpaper .page_content .photo_wrapper .photo_inner {
       display: block;
       width: 100%;
@@ -1459,11 +1475,125 @@ option {
                   justify-content: center;
           -webkit-box-align: center;
               -ms-flex-align: center;
-                  align-items: center; }
+                  align-items: center;
+          background-image: url("../assets/images/button-hover.png"); }
+          .wallpaper .page_content .photo_wrapper .photo_inner .photo_sizes .page_button.small:hover, .wallpaper .page_content .photo_wrapper .photo_inner .photo_sizes .page_button.small:focus {
+            background-image: url("../assets/images/button.png"); }
           .wallpaper .page_content .photo_wrapper .photo_inner .photo_sizes .page_button.small img {
             max-width: 100%;
             max-height: 100%;
             margin: 0 auto; }
+
+.vocabulary {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 40px;
+  padding-left: 3.125vw; }
+  .vocabulary .smiles--kids {
+    width: 100%; }
+    .vocabulary .smiles--kids .speech-bubble {
+      background-image: url("../assets/images/bubble_long-big.png");
+      height: auto;
+      min-height: unset;
+      width: 80%;
+      padding: 40px 140px 50px 50px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      position: relative;
+      right: 0;
+      top: 0; }
+      .vocabulary .smiles--kids .speech-bubble .title {
+        font-size: 30px;
+        font-weight: 900;
+        width: 80%;
+        margin: 0 auto 1em; }
+      .vocabulary .smiles--kids .speech-bubble p {
+        font-size: 24px;
+        margin: 0 0 1em;
+        font-weight: 400; }
+        .vocabulary .smiles--kids .speech-bubble p.wordslist {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+          .vocabulary .smiles--kids .speech-bubble p.wordslist span {
+            width: calc(100% / 3);
+            text-align: left;
+            font-size: 14px; }
+      .vocabulary .smiles--kids .speech-bubble ol {
+        margin: 0 0 1em; }
+      .vocabulary .smiles--kids .speech-bubble li {
+        font-size: 24px;
+        margin: 0 0 10px; }
+      .vocabulary .smiles--kids .speech-bubble .page_button.addnew {
+        color: white;
+        font-size: 20px;
+        width: 456px;
+        height: 76px;
+        top: unset;
+        right: calc((100% + 160px) / 2);
+        margin-right: -228px;
+        bottom: -20px; }
+        .vocabulary .smiles--kids .speech-bubble .page_button.addnew:before, .vocabulary .smiles--kids .speech-bubble .page_button.addnew:after {
+          display: none; }
+    .vocabulary .smiles--kids picture {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1; }
+  .vocabulary .page_content--tiles {
+    width: 90%; }
+    .vocabulary .page_content--tiles .container {
+      display: block; }
+      .vocabulary .page_content--tiles .container:after {
+        content: '';
+        display: block;
+        clear: both; }
+      .vocabulary .page_content--tiles .container .tile {
+        padding: 40px 110px 70px 40px;
+        width: 33%;
+        float: left; }
+        .vocabulary .page_content--tiles .container .tile-width {
+          width: 33%; }
+        .vocabulary .page_content--tiles .container .tile .tile_wrapper {
+          width: 100%;
+          display: inline-block;
+          border: 7px solid white;
+          border-radius: 50px;
+          position: relative;
+          padding: 20px 30px 30px; }
+          .vocabulary .page_content--tiles .container .tile .tile_wrapper .icon {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: white;
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            padding: 20px; }
+          .vocabulary .page_content--tiles .container .tile .tile_wrapper .user_name {
+            margin: 0 0 1em;
+            padding-left: 90px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: white;
+            font-size: 20px; }
+          .vocabulary .page_content--tiles .container .tile .tile_wrapper .user_message {
+            margin: 0 0 1em;
+            font-size: 20px; }
+          .vocabulary .page_content--tiles .container .tile .tile_wrapper picture {
+            width: 100%;
+            border: 7px solid white;
+            border-radius: 50px;
+            display: block;
+            overflow: hidden; }
+            .vocabulary .page_content--tiles .container .tile .tile_wrapper picture img {
+              width: 100%; }
 
 @media screen and (min-width: 1940px) {
   .page_wrapper {

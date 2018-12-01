@@ -1,0 +1,124 @@
+.vocabulary {
+  flex-direction: column;
+  padding-top: 40px;
+  padding-left: 3.125vw;
+  .smiles--kids {
+    width: 100%;
+    .speech-bubble {
+      background-image: url("../assets/images/bubble_long-big.png");
+      height: auto;
+      min-height: unset;
+      width: 80%;
+      padding: 40px 140px 50px 50px;
+      flex-direction: column;
+      position: relative;
+      right: 0;
+      top: 0;
+      .title {
+        font-size: 30px;
+        font-weight: 900;
+        width: 80%;
+        margin: 0 auto 1em;
+      }
+      p {
+        font-size: 24px;
+        margin: 0 0 1em;
+        font-weight: 400;
+        &.wordslist {
+          display: flex;
+          flex-wrap: wrap;
+          span {
+            width: calc(100% / 3);
+            text-align: left;
+            font-size: 14px;
+          }
+        }
+      }
+      ol {
+        margin: 0 0 1em;
+      }
+      li {
+        font-size: 24px;
+        margin: 0 0 10px;
+      }
+      .page_button.addnew {
+        color: $colorBasicLight;
+        font-size: 20px;
+        width: 456px;
+        height: 76px;
+        top: unset;
+        right: calc((100% + 160px) / 2);
+        margin-right: -228px;
+        bottom: -20px;
+        &:before, &:after {
+          display: none;
+        }
+      }
+    }
+    picture {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+  .page_content--tiles {
+    width: 90%;
+    .container {
+      display: block;
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      .tile {
+        padding: 40px 110px 70px 40px;
+        width: 33%;
+        float: left;
+        &-width {
+          width: 33%;
+        }
+        .tile_wrapper{
+          width: 100%;
+          display: inline-block;
+          border: 7px solid $colorBasicLight;
+          border-radius: 50px;
+          position: relative;
+          padding: 20px 30px 30px;
+          .icon {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: $colorBasicLight;
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            padding: 20px;
+          }
+          .user_name {
+            margin: 0 0 1em;
+            padding-left: 90px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $colorBasicLight;
+            font-size: 20px;
+          }
+          .user_message {
+            margin: 0 0 1em;
+            font-size: 20px;
+          }
+          picture {
+            width: 100%;
+            border: 7px solid $colorBasicLight;
+            border-radius: 50px;
+            display: block;
+            overflow: hidden;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

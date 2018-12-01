@@ -14,7 +14,7 @@ block title
 
             .container.wallpaper
                 aside.smiles.smiles--photo
-                    .speech-bubble
+                    .speech-bubble.long.small
                         p Добавьте уюта на экран своего компьютера! Скачайте понравившуюся вам картинку и установите в качестве заставки для рабочего стола. Пусть этой зимой тепло окружает вас повсюду!
                     picture
                         img(src='assets/images/smile_01.png', alt='')
@@ -35,23 +35,7 @@ block title
                                             img(src='assets/images/mobile.png', alt='Mobile')
                                         a.page_button.small(href='')
                                             img(src='assets/images/desktop.png', alt='Desktop')
-                                button.page_button(type='button') Скачать
+                                button.page_button.change-size(type='button') Скачать
                             -i++
 
-
-        .modal_wrapper
-            .modal(id='photoDownloaded')
-                .page_title
-                    p.title weeks of warmth
-                    p.subtutle Недели теплоты
-                .modal_inner
-                    picture
-                        img(src='assets/images/smile_popup.png', alt='')
-                    .speech-bubble
-                        p Спасибо!<br>Ваша фотография загружена!
-                    button.page_button(type='button') Назад
-
-
-
-        script(src='scripts/libs/jquery-3.2.1.min.js')
         script(src='scripts/common.js')

@@ -50,6 +50,27 @@
     margin: 0 0 1em;
     &.list-item {}
   }
+  ol {
+    margin: 1em 0;
+    counter-reset: steps;
+    list-style-type: none;
+    padding: 0;
+    column-count: 2;
+    width: 100%;
+    li {
+      padding-right: 30px;
+      display: inline-block;
+      &:before {
+        counter-increment: steps;
+        content: counter(steps) '. ';
+      }
+    }
+  }
+  &.thanx {
+    .wrapper {
+    //  column-count: 2;
+    }
+  }
 }
 .smiles.smiles--text {
   width: 228px;
